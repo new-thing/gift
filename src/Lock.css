@@ -1,0 +1,190 @@
+/* Background image with minimal overlay for maximum visibility */
+.lock-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url('./assets/p1.jpg') no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Very light overlay to ensure text readability */
+.lock-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Green accent overlay for theme consistency */
+.lock-page::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, transparent 50%, rgba(0, 255, 0, 0.05) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Semi-transparent lock container for background visibility */
+.lock-container {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 3rem;
+  border-radius: 1rem;
+  text-align: center;
+  width: 400px;
+  box-shadow: 
+    0 0 30px rgba(0, 255, 0, 0.4),
+    0 0 60px rgba(0, 255, 0, 0.2),
+    inset 0 0 20px rgba(0, 255, 0, 0.1);
+  border: 2px solid #adedad;
+  animation: pulseGlow 2s ease-in-out infinite alternate;
+  position: relative;
+  z-index: 5;
+}
+
+/* Pulsing glow animation for suspense */
+@keyframes pulseGlow {
+  from {
+    box-shadow: 
+      0 0 20px #adedad,
+      0 0 40px rgba(0, 255, 0, 0.1),
+      inset 0 0 15px rgba(0, 255, 0, 0.05);
+  }
+  to {
+    box-shadow: 
+      0 0 40px rgba(0, 255, 0, 0.5),
+      0 0 80px rgba(0, 255, 0, 0.2),
+      inset 0 0 30px rgba(0, 255, 0, 0.1);
+  }
+}
+
+/* Heading with green styling */
+.lock-container h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #00ff00;
+  margin-bottom: 2rem;
+  text-shadow: 
+    0 0 10px rgba(105, 184, 105, 0.8),
+    0 0 20px rgba(0, 255, 0, 0.4);
+  letter-spacing: 1px;
+}
+
+/* Input with green styling */
+.lock-container input {
+  width: 280px;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid #00ff00;
+  text-align: center;
+  font-size: 1.2rem;
+  background: rgba(0, 0, 0, 0.6);
+  color: #00ff00;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 
+    inset 0 0 15px rgba(0, 255, 0, 0.1),
+    0 0 15px rgba(0, 255, 0, 0.2);
+}
+
+.lock-container input:focus {
+  border-color: #00ff00;
+  box-shadow: 
+    inset 0 0 25px rgba(0, 255, 0, 0.2),
+    0 0 30px rgba(0, 255, 0, 0.4);
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+}
+
+/* Error Message with green styling */
+.error {
+  margin-top: 1rem;
+  color: #00ff00;
+  font-weight: bold;
+  font-size: 1rem;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+  animation: flicker 0.5s ease-in-out infinite alternate;
+}
+
+/* Flickering animation for error */
+@keyframes flicker {
+  from {
+    opacity: 0.8;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+  }
+  to {
+    opacity: 1;
+    text-shadow: 0 0 20px rgba(0, 255, 0, 1);
+  }
+}
+
+/* Button with green styling */
+.lock-container button {
+  margin-top: 1.5rem;
+  width: 320px;
+  padding: 1rem;
+  border: 2px solid #00ff00;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.6);
+  color: #00ff00;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 0 20px rgba(0, 255, 0, 0.3),
+    inset 0 0 15px rgba(0, 255, 0, 0.1);
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+}
+
+.lock-container button:hover {
+  transform: scale(1.05);
+  box-shadow: 
+    0 0 35px rgba(0, 255, 0, 0.5),
+    inset 0 0 25px rgba(0, 255, 0, 0.2);
+  background: rgba(0, 26, 0, 0.6);
+}
+
+.lock-container button:active {
+  transform: scale(0.98);
+  box-shadow: 
+    0 0 25px rgba(0, 255, 0, 0.6),
+    inset 0 0 30px rgba(0, 255, 0, 0.3);
+}
+
+/* Form styling */
+.lock-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 480px) {
+  .lock-container {
+    width: 90%;
+    max-width: 350px;
+    padding: 2rem;
+  }
+  
+  .lock-container input {
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  .lock-container button {
+    width: 100%;
+    max-width: 280px;
+  }
+}
