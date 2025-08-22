@@ -9,10 +9,10 @@ function Lock() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (passcode === "NIKU") {
+    if (passcode === "01-08") {
       navigate("/wish");
     } else {
-      setError("❌ Wrong Passcode! Try yoursg partners NIKU name ❤️");
+      setError("❌ Wrong Passcode! Try again..");
     }
   };
 
@@ -31,7 +31,7 @@ function Lock() {
 
           {error && <p className="error">{error}</p>}
 
-          <button type="submit">💖 Unlock</button>
+          <button type="submit">Unlock</button>
         </form>
       </div>
     </div>

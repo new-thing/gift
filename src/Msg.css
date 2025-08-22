@@ -1,6 +1,6 @@
 .msg-page {
-  /* background: url("../assets/p-3.jpg") no-repeat center center/cover; */
-    background: url("./assets/p-3.jpg") no-repeat center center/cover;
+  background: url("../assets/p-3.jpg") no-repeat center center/cover;
+    /* background: url("./assets/p-3.jpg") no-repeat center center/cover; */
 
   /* min-height: 100px; */
   display: flex;

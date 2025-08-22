@@ -17,25 +17,23 @@ function Wish() {
 
       {/* Main Content */}
       <div className="wish-box">
-        <h1>Happy 4 Years Together ❤️</h1>
+        <h1>Lorem ipsum dolor sit.</h1>
         <p>
-          Four years, countless memories,endless laughter, 
-          and a love that only grows....  
-          You are my today and all of my tomorrows 💕
+  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem magni harum quaerat labore porro veniam.
         </p>
 
         <button className="secret-btn" onClick={() => setShowSecret(!showSecret)}>
-          💌 Secret Msg
+        click here
         </button>
 
         {showSecret && (
           <div className="secret-msg">
-            My heart beats only for you, and forever will.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, dolore!
             <button
               className="secret-btn-next"
               onClick={() => navigate("/msg")} 
             >
-              💌 Click
+              Click
             </button>
           </div>
         )}
